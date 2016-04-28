@@ -400,9 +400,12 @@ static NSString* const WPEditorViewWebViewContentSizeKey = @"contentSize";
     
     NSString* newHeightString = [self.webView stringByEvaluatingJavaScriptFromString:@"$(document.body).height();"];
     NSInteger newHeight = [newHeightString integerValue];
-    
+    //
+    [self callDelegateViewHeightChangedFromOldHeight:self.lastEditorHeight toNewHeight:newHeight];
+    //
     self.lastEditorHeight = newHeight;
     self.webView.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.frame), newHeight);
+    
 }
 
 #pragma mark - UIWebViewDelegate
@@ -2075,5 +2078,10 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         [self.delegate editorView:self sourceFieldFocused:view];
     }
 }
-
+- (void)callDelegateViewHeightChangedFromOldHeight:(CGFloat)oldHeight toNewHeight:(CGFloat)newHeight
+{
+    if ([self.delegate respondsToSelector:@selector(editorView:didEditorHeightChangedFromOldHeight:toNewHeight:)]) {
+        [self.delegate editorView:self didEditorHeightChangedFromOldHeight:oldHeight toNewHeight:newHeight];
+    }
+}
 @end

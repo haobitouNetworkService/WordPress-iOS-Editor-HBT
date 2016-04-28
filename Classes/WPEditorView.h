@@ -172,6 +172,15 @@ stylesForCurrentSelection:(NSArray*)styles;
  */
 - (void)editorView:(WPEditorView *)editorView mediaRemoved:(NSString *)mediaID;
 
+/**
+ *  编辑器高度变化
+ *
+ *  @param editorView The editor view.
+ *  @param oldHeight
+ *  @param newHeight
+ */
+- (void)editorView:(WPEditorView *)editorView didEditorHeightChangedFromOldHeight:(CGFloat)oldHeight toNewHeight:(CGFloat)newHeight;
+
 @end
 
 @interface WPEditorView : UIView
