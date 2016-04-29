@@ -1777,6 +1777,25 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)disableScroll
 {
     self.webView.scrollView.scrollEnabled = NO;
+    self.webView.scrollView.bounces = NO;
+}
+/**
+ *  返回webview的ContentSize
+ *
+ *  @return
+ */
+- (CGSize)webViewContentSize
+{
+    return self.webView.scrollView.contentSize;
+}
+/**
+ *  更新contentView大小
+ *
+ *  @param newSize
+ */
+- (void)updateWebViewSize:(CGSize)newSize
+{
+    self.webView.frame = CGRectMake(0, 0, newSize.width, newSize.height);
 }
 #pragma mark - Styles
 

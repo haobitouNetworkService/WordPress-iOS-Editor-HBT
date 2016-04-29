@@ -460,7 +460,18 @@ stylesForCurrentSelection:(NSArray*)styles;
  *  Disables webView scroll
  */
 - (void)disableScroll;
-
+/**
+ *  返回webview的ContentSize
+ *
+ *  @return
+ */
+- (CGSize)webViewContentSize;
+/**
+ *  更新contentView大小
+ *
+ *  @param newSize
+ */
+- (void)updateWebViewSize:(CGSize)newSize;
 #pragma mark - Styles
 
 - (void)alignLeft;
