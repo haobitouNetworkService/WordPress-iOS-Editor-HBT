@@ -1771,7 +1771,13 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     [self.sourceViewTitleField setEnabled:YES];
     [self.sourceView setEditable:YES];
 }
-
+/**
+ *  Disables webView scroll
+ */
+- (void)disableScroll
+{
+    self.webView.scrollView.scrollEnabled = NO;
+}
 #pragma mark - Styles
 
 - (void)alignLeft

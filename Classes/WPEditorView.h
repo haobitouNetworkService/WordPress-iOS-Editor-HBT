@@ -456,6 +456,10 @@ stylesForCurrentSelection:(NSArray*)styles;
  *	@brief		Enables editing.
  */
 - (void)enableEditing;
+/**
+ *  Disables webView scroll
+ */
+- (void)disableScroll;
 
 #pragma mark - Styles
 
