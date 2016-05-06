@@ -1,5 +1,5 @@
 #import "WPStyleGuide.h"
-#import "UITableViewTextFieldCell.h"
+#import "WPTextFieldTableViewCell.h"
 #import "UIColor+Helpers.h"
 #import "WPFontManager.h"
 
@@ -9,7 +9,7 @@
 
 + (UIFont *)largePostTitleFont
 {
-    return [WPFontManager openSansLightFontOfSize:32.0];
+    return [WPFontManager systemLightFontOfSize:32.0];
 }
 
 + (NSDictionary *)largePostTitleAttributes
@@ -22,12 +22,12 @@
 
 + (UIFont *)postTitleFont
 {
-    return [WPFontManager openSansRegularFontOfSize:16.0];
+    return [WPFontManager systemRegularFontOfSize:16.0];
 }
 
 + (UIFont *)postTitleFontBold
 {
-    return [WPFontManager openSansBoldFontOfSize:16.0];
+    return [WPFontManager systemBoldFontOfSize:16.0];
 }
 
 + (NSDictionary *)postTitleAttributes
@@ -47,7 +47,7 @@
 
 + (UIFont *)subtitleFont
 {
-    return [WPFontManager openSansRegularFontOfSize:12.0];
+    return [WPFontManager systemRegularFontOfSize:12.0];
 }
 
 + (NSDictionary *)subtitleAttributes
@@ -60,7 +60,7 @@
 
 + (UIFont *)subtitleFontItalic
 {
-    return [WPFontManager openSansItalicFontOfSize:12.0];
+    return [WPFontManager systemItalicFontOfSize:12.0];
 }
 
 + (NSDictionary *)subtitleItalicAttributes
@@ -73,7 +73,7 @@
 
 + (UIFont *)subtitleFontBold
 {
-    return [WPFontManager openSansBoldFontOfSize:12.0];
+    return [WPFontManager systemBoldFontOfSize:12.0];
 }
 
 + (NSDictionary *)subtitleAttributesBold
@@ -86,12 +86,12 @@
 
 + (UIFont *)labelFont
 {
-    return [WPFontManager openSansBoldFontOfSize:10.0];
+    return [WPFontManager systemBoldFontOfSize:10.0];
 }
 
 + (UIFont *)labelFontNormal
 {
-    return [WPFontManager openSansRegularFontOfSize:10.0];
+    return [WPFontManager systemRegularFontOfSize:10.0];
 }
 
 + (NSDictionary *)labelAttributes
@@ -104,17 +104,17 @@
 
 + (UIFont *)regularTextFont
 {
-    return [WPFontManager openSansRegularFontOfSize:16.0];
+    return [WPFontManager systemRegularFontOfSize:16.0];
 }
 
 + (UIFont *)regularTextFontSemiBold
 {
-    return [WPFontManager openSansSemiBoldFontOfSize:16.0];
+    return [WPFontManager systemSemiBoldFontOfSize:16.0];
 }
 
 + (UIFont *)regularTextFontBold
 {
-    return [WPFontManager openSansBoldFontOfSize:16.0];
+    return [WPFontManager systemBoldFontOfSize:16.0];
 }
 
 + (NSDictionary *)regularTextAttributes
@@ -127,17 +127,17 @@
 
 + (UIFont *)tableviewTextFont
 {
-    return [WPFontManager openSansRegularFontOfSize:18.0];
+    return [WPFontManager systemRegularFontOfSize:17.0];
 }
 
 + (UIFont *)tableviewSubtitleFont
 {
-    return [WPFontManager openSansLightFontOfSize:18.0];
+    return [WPFontManager systemRegularFontOfSize:17.0];
 }
 
 + (UIFont *)tableviewSectionHeaderFont
 {
-    return [WPFontManager openSansBoldFontOfSize:12.0];
+    return [WPFontManager systemRegularFontOfSize:13.0];
 }
 
 
@@ -251,6 +251,21 @@
     return [self colorWithR:217 G:79 B:79 alpha:1.0];
 }
 
++ (UIColor *)alertYellowDark
+{
+    return [self colorWithR:0xF0 G:0xB8 B:0x49 alpha:0xFF];
+}
+
++ (UIColor *)alertYellowLighter
+{
+    return [self colorWithR:0xFE G:0xF8 B:0xEE alpha:0xFF];
+}
+
++ (UIColor *)alertRedDarker
+{
+    return [self colorWithR:0x6D G:0x18 B:0x18 alpha:0xFF];
+}
+
 
 #pragma mark - Misc Colors
 
@@ -287,18 +302,18 @@
     return [self wordPressBlue];
 }
 
-// TODO: Move to fetaure category
+// TODO: Move to feature category
 + (UIColor *)buttonActionColor
 {
     return [self wordPressBlue];
 }
 
-// TODO: Move to fetaure category
+// TODO: Move to feature category
 + (UIColor *)nuxFormText {
     return [self darkGrey];
 }
 
-// TODO: Move to fetaure category
+// TODO: Move to feature category
 + (UIColor *)nuxFormPlaceholderText {
     return [self grey];
 }
@@ -339,22 +354,16 @@
 + (void)configureColorsForView:(UIView *)view andTableView:(UITableView *)tableView
 {
     tableView.backgroundView = nil;
-    view.backgroundColor = [WPStyleGuide itsEverywhereGrey];
-    tableView.backgroundColor = [WPStyleGuide itsEverywhereGrey];
-    tableView.separatorColor = [WPStyleGuide readGrey];
+    view.backgroundColor = [WPStyleGuide greyLighten30];
+    tableView.backgroundColor = [WPStyleGuide greyLighten30];
+    tableView.separatorColor = [WPStyleGuide greyLighten20];
 }
 
 + (void)configureColorsForView:(UIView *)view collectionView:(UICollectionView *)collectionView
 {
     collectionView.backgroundView = nil;
-    collectionView.backgroundColor = [WPStyleGuide itsEverywhereGrey];
-    view.backgroundColor = [WPStyleGuide itsEverywhereGrey];
-}
-
-+ (void)configureTableViewActionCell:(UITableViewCell *)cell
-{
-    cell.textLabel.font = [self tableviewTextFont];
-    cell.textLabel.textColor = [self tableViewActionColor];
+    collectionView.backgroundColor = [WPStyleGuide greyLighten30];
+    view.backgroundColor = [WPStyleGuide greyLighten30];
 }
 
 + (void)configureTableViewCell:(UITableViewCell *)cell
@@ -365,32 +374,45 @@
     cell.detailTextLabel.font = [self tableviewSubtitleFont];
     [cell.detailTextLabel sizeToFit];
     
-    cell.textLabel.textColor = [self whisperGrey];
-    cell.detailTextLabel.textColor = [self whisperGrey];
-    if ([cell isKindOfClass:[UITableViewTextFieldCell class]]) {
-        UITableViewTextFieldCell *tfcell = (UITableViewTextFieldCell *)cell;
-        [tfcell.textField setTextColor:[self whisperGrey]];
-    }
-}
-
-+ (void)configureTableViewTextCell:(UITableViewTextFieldCell *)cell
-{
-    [self configureTableViewCell:cell];
-    cell.textField.font = [self tableviewSubtitleFont];
+    cell.textLabel.textColor = [self darkGrey];
+    cell.detailTextLabel.textColor = [self grey];
     
-    if (cell.textField.enabled) {
-        cell.textField.textColor = [self darkAsNightGrey];
-        cell.textField.textAlignment = NSTextAlignmentLeft;
-    } else {
-        cell.textField.textColor = [self textFieldPlaceholderGrey];
-        cell.textField.textAlignment = NSTextAlignmentRight;
-    }
+    cell.imageView.tintColor = [self greyLighten10];
 }
 
 + (void)configureTableViewSmallSubtitleCell:(UITableViewCell *)cell
 {
     [self configureTableViewCell:cell];
     cell.detailTextLabel.font = [self subtitleFont];
+    cell.detailTextLabel.textColor = [self darkGrey];
+}
+
++ (void)configureTableViewActionCell:(UITableViewCell *)cell
+{
+    [self configureTableViewCell:cell];
+    cell.textLabel.font = [self tableviewTextFont];
+    cell.textLabel.textColor = [self tableViewActionColor];
+}
+
++ (void)configureTableViewDestructiveActionCell:(UITableViewCell *)cell
+{
+    [self configureTableViewActionCell:cell];
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    cell.textLabel.textColor = [self errorRed];
+}
+
++ (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell
+{
+    [self configureTableViewCell:cell];
+    cell.textField.font = [self tableviewSubtitleFont];
+    
+    if (cell.textField.enabled) {
+        cell.textField.textColor = [self darkBlue];
+        cell.textField.textAlignment = NSTextAlignmentLeft;
+    } else {
+        cell.textField.textColor = [self grey];
+        cell.textField.textAlignment = NSTextAlignmentRight;
+    }
 }
 
 // TODO: Move to fetaure category

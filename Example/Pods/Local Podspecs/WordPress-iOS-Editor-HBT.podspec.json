@@ -1,0 +1,46 @@
+{
+  "name": "WordPress-iOS-Editor-HBT",
+  "version": "1.0.0",
+  "summary": "A short description of WordPress-iOS-Editor-HBT.",
+  "description": "Reusable component rich text editor for WordPress.com in an iOS application. base WordPress-iOS-Editor to support and add some new property.",
+  "homepage": "https://github.com/haobitouNetworkService/WordPress-iOS-Editor-HBT",
+  "license": "MIT",
+  "authors": {
+    "xthuang_293": "xthuang5556019@163.com"
+  },
+  "source": {
+    "git": "https://github.com/haobitouNetworkService/WordPress-iOS-Editor-HBT.git",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": "Classes/**/*",
+  "resources": [
+    "Assets/*.png",
+    "Assets/*.html",
+    "Assets/*.js",
+    "Assets/*.svg",
+    "Assets/*.css"
+  ],
+  "prefix_header_file": "Classes/WordPress-iOS-Editor-Prefix.pch",
+  "exclude_files": "Classes/exclude",
+  "requires_arc": true,
+  "dependencies": {
+    "CocoaLumberjack": [
+      "~>2.2.0"
+    ],
+    "UIAlertView+Blocks": [
+      "~>0.8.1"
+    ],
+    "WordPress-iOS-Shared": [
+      "~>0.5.5"
+    ],
+    "WordPressCom-Analytics-iOS": [
+      "~>0.0.40"
+    ],
+    "NSObject-SafeExpectations": [
+      "~>0.0.2"
+    ]
+  }
+}

@@ -3,7 +3,7 @@ platform :ios, '7.0'
 # POD to show all warnings.
 
 target 'EditorDemo' do
-  pod 'WordPress-iOS-Editor', :path => '../'
+  pod 'WordPress-iOS-Editor-HBT', :path => '../'
   pod 'CocoaLumberjack', '~>2.2.0', :inhibit_warnings => true
   pod 'UIAlertView+Blocks', '~>0.8.1', :inhibit_warnings => true
   pod 'WordPress-iOS-Shared', '~>0.5.5', :inhibit_warnings => true
