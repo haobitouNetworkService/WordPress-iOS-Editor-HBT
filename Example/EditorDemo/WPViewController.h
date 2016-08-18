@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import <WordPress-iOS-Editor/WPEditorViewController.h>
+#import <WordPress-iOS-Editor-HBT/WPEditorViewController.h>
 
 @interface WPViewController : WPEditorViewController <WPEditorViewControllerDelegate>
 
