@@ -60,7 +60,7 @@ html {
 
 html, body {
     margin:0;
-    font-family:'Merriweather', sans-serif;
+    font-family:sans-serif,'Merriweather';
     font-size:1em;
     color:#2D2D2D;
 }
